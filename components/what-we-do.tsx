@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 const services = [
   {
@@ -58,9 +60,13 @@ const services = [
   },
 ]
 
-export function WhatWeDo() {
+interface WhatWeDoProps {
+  onOpenModal: (service: string) => void
+}
+
+export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
   return (
-    <section className="relative py-32">
+    <section id="services" className="relative py-32">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +92,6 @@ export function WhatWeDo() {
               className="group relative overflow-hidden"
             >
               <div className="relative flex min-h-[600px] items-center">
-                {/* Background image */}
                 <div className="absolute inset-0">
                   <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
                   <img
@@ -96,7 +101,6 @@ export function WhatWeDo() {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="container relative z-20 mx-auto px-6">
                   <div className="max-w-2xl">
                     <motion.div
@@ -109,12 +113,18 @@ export function WhatWeDo() {
                         {String(index + 1).padStart(2, "0")}
                       </div>
                       <h3 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">{service.title}</h3>
-                      <p className="text-xl leading-relaxed text-zinc-300">{service.description}</p>
+                      <p className="mb-8 text-xl leading-relaxed text-zinc-300">{service.description}</p>
+                      <Button
+                        onClick={() => onOpenModal(service.title)}
+                        className="group h-12 gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 font-semibold shadow-lg shadow-purple-500/30 transition-all hover:scale-105 hover:shadow-purple-500/50"
+                      >
+                        Связаться
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
                     </motion.div>
                   </div>
                 </div>
 
-                {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 to-blue-600/0 opacity-0 transition-opacity duration-700 group-hover:from-purple-600/10 group-hover:to-blue-600/10 group-hover:opacity-100" />
               </div>
             </motion.div>

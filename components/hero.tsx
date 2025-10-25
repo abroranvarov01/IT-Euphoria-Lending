@@ -5,7 +5,11 @@ import { ArrowRight } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
-export function Hero() {
+interface HeroProps {
+  onOpenModal: (service?: string) => void
+}
+
+export function Hero({ onOpenModal }: HeroProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -14,6 +18,14 @@ export function Hero() {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95])
+
+  const handleStartProject = () => {
+    onOpenModal()
+  }
+
+  const handleContactUs = () => {
+    onOpenModal()
+  }
 
   return (
     <section ref={ref} className="relative h-screen overflow-hidden">
@@ -95,6 +107,7 @@ export function Hero() {
           >
             <Button
               size="lg"
+              onClick={handleStartProject}
               className="group h-14 gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-8 text-lg font-semibold shadow-2xl shadow-purple-500/50 transition-all hover:scale-105 hover:shadow-purple-500/70"
             >
               Начать проект
@@ -103,6 +116,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
+              onClick={handleContactUs}
               className="h-14 rounded-full border-zinc-700 bg-zinc-900/50 px-8 text-lg font-semibold backdrop-blur-sm transition-all hover:border-zinc-600 hover:bg-zinc-800/50"
             >
               Связаться с нами

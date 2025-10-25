@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react"
 
 export function ContactSection() {
   return (
-    <section className="relative overflow-hidden py-32">
+    <section id="contact" className="relative overflow-hidden py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
       <div className="container relative mx-auto px-6">
