@@ -83,7 +83,8 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed text-zinc-400 md:text-2xl"
           >
-            Разработка, внедрение и сопровождение программных систем полного цикла — от архитектуры до поддержки
+            Команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и цифровизации
+            бизнеса
           </motion.p>
 
           <motion.div
