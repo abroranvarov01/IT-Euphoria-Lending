@@ -51,7 +51,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/90 backdrop-blur-xl shadow-2xl"
+              className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/90 backdrop-blur-xl shadow-2xl sm:rounded-3xl"
             >
               {/* Gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-blue-600/10" />
@@ -59,29 +59,31 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute right-6 top-6 z-10 rounded-full bg-white/5 p-2 transition-colors hover:bg-white/10"
+                className="absolute right-4 top-4 z-10 rounded-full bg-white/5 p-2 transition-colors hover:bg-white/10 sm:right-6 sm:top-6"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              <div className="relative p-8 md:p-12">
-                <div className="mb-8">
-                  <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+              <div className="relative p-6 sm:p-8 lg:p-12">
+                <div className="mb-6 sm:mb-8">
+                  <h2 className="mb-2 text-2xl font-bold sm:mb-3 sm:text-3xl lg:text-4xl">
                     Обсудим ваш{" "}
                     <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
                       проект
                     </span>
                   </h2>
-                  <p className="text-lg text-zinc-400">Оставьте заявку, и мы свяжемся с вами в ближайшее время</p>
+                  <p className="text-base text-zinc-400 sm:text-lg">
+                    Оставьте заявку, и мы свяжемся с вами в ближайшее время
+                  </p>
                   {service && (
-                    <div className="mt-4 inline-block rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-medium text-purple-300">
+                    <div className="mt-3 inline-block rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1.5 text-xs font-medium text-purple-300 sm:mt-4 sm:px-4 sm:py-2 sm:text-sm">
                       Услуга: {service}
                     </div>
                   )}
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid gap-6 md:grid-cols-2">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div>
                       <label htmlFor="name" className="mb-2 block text-sm font-medium text-zinc-300">
                         Имя *
@@ -91,7 +93,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="h-12 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10"
+                        className="h-11 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:h-12"
                         placeholder="Ваше имя"
                       />
                     </div>
@@ -105,7 +107,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="h-12 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10"
+                        className="h-11 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:h-12"
                         placeholder="+998 90 123 45 67"
                       />
                     </div>
@@ -120,7 +122,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10"
+                      className="h-11 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:h-12"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -133,7 +135,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                       id="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="min-h-[120px] border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10"
+                      className="min-h-[100px] border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:min-h-[120px]"
                       placeholder="Расскажите о вашем проекте..."
                     />
                   </div>
@@ -141,10 +143,10 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                   <Button
                     type="submit"
                     size="lg"
-                    className="group h-14 w-full gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-lg font-semibold shadow-2xl shadow-purple-500/50 transition-all hover:scale-[1.02] hover:shadow-purple-500/70"
+                    className="group h-12 w-full gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-base font-semibold shadow-2xl shadow-purple-500/50 transition-all hover:scale-[1.02] hover:shadow-purple-500/70 sm:h-14 sm:text-lg"
                   >
                     Отправить заявку
-                    <Send className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
                   </Button>
                 </form>
               </div>
