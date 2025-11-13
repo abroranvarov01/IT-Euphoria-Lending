@@ -3,8 +3,11 @@
 import Link from "next/link"
 import { Code2, Twitter, Github, Linkedin, Mail } from "lucide-react"
 import { motion } from "framer-motion"
+import { useLanguage } from "@/lib/language-context"
 
 export function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="relative border-t border-zinc-800 bg-black py-16">
       <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
@@ -18,9 +21,7 @@ export function Footer() {
               </div>
               <span className="text-xl font-semibold">IT Outsource</span>
             </Link>
-            <p className="mb-6 max-w-sm leading-relaxed text-zinc-400">
-              Разработка, внедрение и сопровождение IT-систем полного цикла для вашего бизнеса
-            </p>
+            <p className="mb-6 max-w-sm leading-relaxed text-zinc-400">{t.footer.description}</p>
             <div className="flex gap-3">
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Link
@@ -58,86 +59,50 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">Услуги</h3>
+            <h3 className="mb-4 font-semibold">{t.footer.services.title}</h3>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="#services" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Внедрение ПО
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Разработка систем
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Консалтинг
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Аудит
-                </Link>
-              </li>
+              {t.footer.services.links.map((link) => (
+                <li key={link}>
+                  <Link href="#services" className="text-zinc-400 transition-colors hover:text-purple-400">
+                    {link}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">Компания</h3>
+            <h3 className="mb-4 font-semibold">{t.footer.company.title}</h3>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="#" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  О нас
-                </Link>
-              </li>
-              <li>
-                <Link href="#cases" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Кейсы
-                </Link>
-              </li>
-              <li>
-                <Link href="#why-us" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Преимущества
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Контакты
-                </Link>
-              </li>
+              {t.footer.company.links.map((link, index) => (
+                <li key={link}>
+                  <Link
+                    href={index === 1 ? "#cases" : index === 2 ? "#why-us" : index === 3 ? "#contact" : "#"}
+                    className="text-zinc-400 transition-colors hover:text-purple-400"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">Ресурсы</h3>
+            <h3 className="mb-4 font-semibold">{t.footer.resources.title}</h3>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="#" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Документация
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Блог
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Поддержка
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-zinc-400 transition-colors hover:text-purple-400">
-                  Карьера
-                </Link>
-              </li>
+              {t.footer.resources.links.map((link) => (
+                <li key={link}>
+                  <Link href="#" className="text-zinc-400 transition-colors hover:text-purple-400">
+                    {link}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="mt-16 border-t border-zinc-800 pt-8 text-center">
-          <p className="text-sm text-zinc-500">&copy; 2025 IT Outsource. Все права защищены.</p>
+          <p className="text-sm text-zinc-500">&copy; 2025 {t.footer.copyright}</p>
         </div>
       </div>
     </footer>

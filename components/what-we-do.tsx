@@ -3,61 +3,18 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
-const services = [
-  {
-    title: "Разработка и внедрение CRM-систем",
-    description:
-      "Проектирование и создание CRM под задачи клиента (продажи, сервис, склад, логистика). Интеграция с телефонией, Telegram, 1С и внешними системами.",
-    image: "/software-implementation-modern-office.jpg",
-  },
-  {
-    title: "Системы контроля и управления доступом (СКУД)",
-    description:
-      "Проектирование и внедрение решений для безопасности предприятий. Интеграция СКУД с видеонаблюдением, учётом рабочего времени и корпоративными сервисами.",
-    image: "/database-servers-data-center.jpg",
-  },
-  {
-    title: "Разработка Telegram-ботов",
-    description:
-      "Боты для продаж, обратной связи, бронирования, опросов и внутренней автоматизации. Интеграция с CRM, 1С, ERP и платёжными системами.",
-    image: "/business-automation-workflow.png",
-  },
-  {
-    title: "Создание сайтов и веб-решений",
-    description:
-      "Сайты-визитки, корпоративные страницы и лендинги. Поддержка адаптивного дизайна, SEO-оптимизация и интеграция с CRM.",
-    image: "/it-consulting-meeting.png",
-  },
-  {
-    title: "Внедрение и адаптация искусственного интеллекта",
-    description:
-      "Анализ бизнес-процессов и подбор AI-моделей для автоматизации. Чат-боты с нейросетью, интеллектуальные рекомендации, анализ данных.",
-    image: "/business-analysis-charts.png",
-  },
-  {
-    title: "Виртуализация и контейнеризация",
-    description:
-      "Развёртывание инфраструктуры на VMware, Proxmox, Docker, Kubernetes. Оптимизация серверных мощностей, резервное копирование и масштабирование.",
-    image: "/software-implementation-modern-office.jpg",
-  },
-  {
-    title: "Сетевые решения и маршрутизация",
-    description:
-      "Построение корпоративных и VPN-сетей. Настройка маршрутизаторов, балансировщиков и сетевых политик безопасности.",
-    image: "/database-servers-data-center.jpg",
-  },
-  {
-    title: "IP-телефония",
-    description: "Внедрение VoIP-решений, настройка Asterisk, 3CX, FreePBX. Интеграция телефонии с CRM и ботами.",
-    image: "/business-automation-workflow.png",
-  },
-  {
-    title: "Разработка и доработка 1С",
-    description:
-      "Индивидуальные конфигурации и автоматизация учёта. Интеграция 1С с веб-сервисами, CRM и IP-телефонией.",
-    image: "/it-consulting-meeting.png",
-  },
+const serviceImages = [
+  "/software-implementation-modern-office.jpg",
+  "/database-servers-data-center.jpg",
+  "/business-automation-workflow.png",
+  "/it-consulting-meeting.png",
+  "/business-analysis-charts.png",
+  "/software-implementation-modern-office.jpg",
+  "/database-servers-data-center.jpg",
+  "/business-automation-workflow.png",
+  "/it-consulting-meeting.png",
 ]
 
 interface WhatWeDoProps {
@@ -65,6 +22,8 @@ interface WhatWeDoProps {
 }
 
 export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
+  const { t } = useLanguage()
+
   return (
     <section id="services" className="relative py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6">
@@ -76,13 +35,15 @@ export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
           className="mb-12 text-center sm:mb-16 lg:mb-20"
         >
           <h2 className="mb-4 text-balance text-3xl font-bold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            Что мы{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">делаем</span>
+            {t.whatWeDo.title.split("делаем")[0] || t.whatWeDo.title.split("qilamiz")[0]}{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+              {t.whatWeDo.title.includes("делаем") ? "делаем" : "qilamiz"}
+            </span>
           </h2>
         </motion.div>
 
         <div className="space-y-0">
-          {services.map((service, index) => (
+          {t.whatWeDo.services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 50 }}
@@ -95,7 +56,7 @@ export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
                 <div className="absolute inset-0">
                   <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50 z-10 sm:via-black/80 sm:to-transparent" />
                   <img
-                    src={service.image || "/placeholder.svg"}
+                    src={serviceImages[index] || "/placeholder.svg"}
                     alt={service.title}
                     className="h-full w-full object-cover opacity-30 transition-all duration-700 group-hover:scale-105 group-hover:opacity-40"
                   />
@@ -122,7 +83,7 @@ export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
                         onClick={() => onOpenModal(service.title)}
                         className="group h-10 gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-5 text-sm font-semibold shadow-lg shadow-purple-500/30 transition-all hover:scale-105 hover:shadow-purple-500/50 sm:h-12 sm:px-6 sm:text-base"
                       >
-                        Связаться
+                        {t.buttons.contact}
                         <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
                       </Button>
                     </motion.div>

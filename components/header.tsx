@@ -4,9 +4,10 @@ import type React from "react"
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Code2, Menu, X } from "lucide-react"
+import { Code2, Menu, X, Globe } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
+import { useLanguage } from "@/lib/language-context"
 
 interface HeaderProps {
   onOpenModal: (service?: string) => void
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 export function Header({ onOpenModal }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
@@ -34,6 +36,10 @@ export function Header({ onOpenModal }: HeaderProps) {
   const handleModalOpen = () => {
     setMobileMenuOpen(false)
     onOpenModal()
+  }
+
+  const toggleLanguage = () => {
+    setLanguage(language === "ru" ? "uz" : "ru")
   }
 
   return (
@@ -57,38 +63,46 @@ export function Header({ onOpenModal }: HeaderProps) {
             onClick={(e) => scrollToSection(e, "services")}
             className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
           >
-            Услуги
+            {t.nav.services}
           </a>
           <a
             href="#why-us"
             onClick={(e) => scrollToSection(e, "why-us")}
             className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
           >
-            Преимущества
+            {t.nav.advantages}
           </a>
           <a
             href="#cases"
             onClick={(e) => scrollToSection(e, "cases")}
             className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
           >
-            Кейсы
+            {t.nav.cases}
           </a>
           <a
             href="#contact"
             onClick={(e) => scrollToSection(e, "contact")}
             className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
           >
-            Контакты
+            {t.nav.contacts}
           </a>
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="flex h-9 items-center gap-1.5 rounded-lg bg-white/5 px-3 text-sm font-medium transition-colors hover:bg-white/10 sm:h-10 sm:gap-2 sm:px-4"
+          >
+            <Globe className="h-4 w-4" />
+            <span className="uppercase">{language}</span>
+          </button>
+
           <Button
             size="lg"
             className="hidden h-10 bg-gradient-to-r from-purple-600 to-blue-600 px-4 text-sm shadow-lg shadow-purple-500/30 hover:from-purple-700 hover:to-blue-700 sm:h-12 sm:px-6 sm:text-base md:inline-flex"
             onClick={handleModalOpen}
           >
-            Обсудить проект
+            {t.buttons.discussProject}
           </Button>
 
           {/* Mobile menu button */}
@@ -116,35 +130,35 @@ export function Header({ onOpenModal }: HeaderProps) {
                 onClick={(e) => scrollToSection(e, "services")}
                 className="rounded-lg px-4 py-3 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
               >
-                Услуги
+                {t.nav.services}
               </a>
               <a
                 href="#why-us"
                 onClick={(e) => scrollToSection(e, "why-us")}
                 className="rounded-lg px-4 py-3 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
               >
-                Преимущества
+                {t.nav.advantages}
               </a>
               <a
                 href="#cases"
                 onClick={(e) => scrollToSection(e, "cases")}
                 className="rounded-lg px-4 py-3 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
               >
-                Кейсы
+                {t.nav.cases}
               </a>
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "contact")}
                 className="rounded-lg px-4 py-3 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
               >
-                Контакты
+                {t.nav.contacts}
               </a>
               <Button
                 size="lg"
                 className="mt-2 h-12 w-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30 hover:from-purple-700 hover:to-blue-700"
                 onClick={handleModalOpen}
               >
-                Обсудить проект
+                {t.buttons.discussProject}
               </Button>
             </nav>
           </motion.div>

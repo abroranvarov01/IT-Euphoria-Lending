@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { useLanguage } from "@/lib/language-context"
 
 interface HeroProps {
   onOpenModal: (service?: string) => void
 }
 
 export function Hero({ onOpenModal }: HeroProps) {
+  const { t } = useLanguage()
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -73,7 +75,7 @@ export function Hero({ onOpenModal }: HeroProps) {
             className="mb-4 sm:mb-6"
           >
             <span className="inline-block rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-1.5 text-xs font-medium text-purple-300 backdrop-blur-sm sm:px-6 sm:py-2 sm:text-sm">
-              Технологии будущего
+              {t.hero.badge}
             </span>
           </motion.div>
 
@@ -83,13 +85,15 @@ export function Hero({ onOpenModal }: HeroProps) {
             transition={{ duration: 1, delay: 0.4 }}
             className="mb-6 text-balance text-3xl font-bold leading-[1.1] tracking-tight sm:mb-8 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
           >
-            Мы создаем{" "}
+            {t.hero.title.split("цифровые решения")[0]}
             <span className="bg-gradient-to-r from-purple-400 via-purple-600 to-blue-500 bg-clip-text text-transparent">
-              цифровые решения
+              {t.hero.title.includes("цифровые решения") ? "цифровые решения" : "raqamli yechimlar"}
             </span>
-            ,<br />
-            которые вдохновляют
-            <br />и масштабируют бизнес
+            {
+              t.hero.title.split(
+                t.hero.title.includes("цифровые решения") ? "цифровые решения" : "raqamli yechimlar",
+              )[1]
+            }
           </motion.h1>
 
           <motion.p
@@ -98,8 +102,7 @@ export function Hero({ onOpenModal }: HeroProps) {
             transition={{ duration: 1, delay: 0.6 }}
             className="mx-auto mb-8 max-w-3xl text-pretty text-base leading-relaxed text-zinc-400 sm:mb-12 sm:text-lg md:text-xl lg:text-2xl"
           >
-            Команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и цифровизации
-            бизнеса
+            {t.hero.description}
           </motion.p>
 
           <motion.div
@@ -113,7 +116,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               onClick={handleStartProject}
               className="group h-12 w-full gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 text-base font-semibold shadow-2xl shadow-purple-500/50 transition-all hover:scale-105 hover:shadow-purple-500/70 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
             >
-              Начать проект
+              {t.buttons.startProject}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
             </Button>
             <Button
@@ -122,7 +125,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               onClick={handleContactUs}
               className="h-12 w-full rounded-full border-zinc-700 bg-zinc-900/50 px-6 text-base font-semibold backdrop-blur-sm transition-all hover:border-zinc-600 hover:bg-zinc-800/50 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
             >
-              Связаться с нами
+              {t.buttons.contactUs}
             </Button>
           </motion.div>
         </div>

@@ -8,6 +8,7 @@ import { X, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useLanguage } from "@/lib/language-context"
 
 interface ContactModalProps {
   isOpen: boolean
@@ -16,6 +17,8 @@ interface ContactModalProps {
 }
 
 export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
+  const { t } = useLanguage()
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -26,7 +29,6 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Form submitted:", { ...formData, service })
-    // Here you would typically send the form data to your backend
     onClose()
     setFormData({ name: "", phone: "", email: "", message: "" })
   }
@@ -67,17 +69,15 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
               <div className="relative p-6 sm:p-8 lg:p-12">
                 <div className="mb-6 sm:mb-8">
                   <h2 className="mb-2 text-2xl font-bold sm:mb-3 sm:text-3xl lg:text-4xl">
-                    Обсудим ваш{" "}
+                    {t.contactModal.title.split(" ")[0]}{" "}
                     <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-                      проект
+                      {t.contactModal.title.split(" ").slice(1).join(" ")}
                     </span>
                   </h2>
-                  <p className="text-base text-zinc-400 sm:text-lg">
-                    Оставьте заявку, и мы свяжемся с вами в ближайшее время
-                  </p>
+                  <p className="text-base text-zinc-400 sm:text-lg">{t.contactModal.subtitle}</p>
                   {service && (
                     <div className="mt-3 inline-block rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1.5 text-xs font-medium text-purple-300 sm:mt-4 sm:px-4 sm:py-2 sm:text-sm">
-                      Услуга: {service}
+                      {t.contactModal.service}: {service}
                     </div>
                   )}
                 </div>
@@ -86,7 +86,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                   <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div>
                       <label htmlFor="name" className="mb-2 block text-sm font-medium text-zinc-300">
-                        Имя *
+                        {t.contactModal.form.name} {t.contactModal.form.required}
                       </label>
                       <Input
                         id="name"
@@ -94,12 +94,12 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="h-11 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:h-12"
-                        placeholder="Ваше имя"
+                        placeholder={t.contactModal.form.namePlaceholder}
                       />
                     </div>
                     <div>
                       <label htmlFor="phone" className="mb-2 block text-sm font-medium text-zinc-300">
-                        Телефон *
+                        {t.contactModal.form.phone} {t.contactModal.form.required}
                       </label>
                       <Input
                         id="phone"
@@ -108,14 +108,14 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="h-11 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:h-12"
-                        placeholder="+998 90 123 45 67"
+                        placeholder={t.contactModal.form.phonePlaceholder}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-300">
-                      Email
+                      {t.contactModal.form.email}
                     </label>
                     <Input
                       id="email"
@@ -123,20 +123,20 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="h-11 border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:h-12"
-                      placeholder="your@email.com"
+                      placeholder={t.contactModal.form.emailPlaceholder}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="mb-2 block text-sm font-medium text-zinc-300">
-                      Описание проекта
+                      {t.contactModal.form.message}
                     </label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="min-h-[100px] border-white/10 bg-white/5 backdrop-blur-sm transition-colors focus:border-purple-500/50 focus:bg-white/10 sm:min-h-[120px]"
-                      placeholder="Расскажите о вашем проекте..."
+                      placeholder={t.contactModal.form.messagePlaceholder}
                     />
                   </div>
 
@@ -145,7 +145,7 @@ export function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
                     size="lg"
                     className="group h-12 w-full gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-base font-semibold shadow-2xl shadow-purple-500/50 transition-all hover:scale-[1.02] hover:shadow-purple-500/70 sm:h-14 sm:text-lg"
                   >
-                    Отправить заявку
+                    {t.buttons.send}
                     <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
                   </Button>
                 </form>

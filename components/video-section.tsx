@@ -2,8 +2,10 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { useLanguage } from "@/lib/language-context"
 
 export function VideoSection() {
+  const { t } = useLanguage()
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,10 +34,10 @@ export function VideoSection() {
                 className="text-center"
               >
                 <h2 className="text-balance text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  Разработка — это искусство
+                  {t.videoSection.title.split("искусство")[0] || t.videoSection.title.split("san'ati")[0]}
                   <br />
                   <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-                    точности и вдохновения
+                    {t.videoSection.title.split("искусство")[1] || t.videoSection.title.split("san'ati")[1]}
                   </span>
                 </h2>
               </motion.div>

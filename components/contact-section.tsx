@@ -5,8 +5,11 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 export function ContactSection() {
+  const { t } = useLanguage()
+
   return (
     <section id="contact" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
@@ -21,29 +24,27 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <h2 className="mb-4 text-balance text-3xl font-bold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl">
-              Начнем{" "}
+              {t.contactSection.title.split(" ")[0]}{" "}
               <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-                работать
+                {t.contactSection.title.split(" ").slice(1, -1).join(" ")}
               </span>{" "}
-              вместе
+              {t.contactSection.title.split(" ").slice(-1)}
             </h2>
-            <p className="mb-6 text-base text-zinc-400 sm:mb-8 sm:text-lg lg:text-xl">
-              Расскажите о вашем проекте, и мы свяжемся с вами в ближайшее время
-            </p>
+            <p className="mb-6 text-base text-zinc-400 sm:mb-8 sm:text-lg lg:text-xl">{t.contactSection.subtitle}</p>
 
             <form className="space-y-4 sm:space-y-6">
               <div className="space-y-4">
                 <Input
-                  placeholder="Ваше имя"
+                  placeholder={t.contactSection.form.name}
                   className="h-12 rounded-xl border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all focus:border-purple-500 sm:h-14"
                 />
                 <Input
                   type="email"
-                  placeholder="Email"
+                  placeholder={t.contactSection.form.email}
                   className="h-12 rounded-xl border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all focus:border-purple-500 sm:h-14"
                 />
                 <Textarea
-                  placeholder="Расскажите о вашем проекте"
+                  placeholder={t.contactSection.form.message}
                   rows={5}
                   className="rounded-xl border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all focus:border-purple-500 sm:rows-6"
                 />
@@ -53,7 +54,7 @@ export function ContactSection() {
                 size="lg"
                 className="group h-12 w-full gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-base font-semibold shadow-2xl shadow-purple-500/30 transition-all hover:scale-[1.02] hover:shadow-purple-500/50 sm:h-14 sm:text-lg"
               >
-                Отправить заявку
+                {t.contactSection.form.submit}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
               </Button>
             </form>

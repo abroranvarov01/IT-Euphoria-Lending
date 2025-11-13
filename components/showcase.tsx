@@ -2,32 +2,11 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-
-const cases = [
-  {
-    title: "Платформа для финтех-стартапа",
-    category: "Финансовые технологии",
-    description: "Разработка масштабируемой платформы для обработки платежей с высокой нагрузкой",
-    image: "/fintech-platform-dashboard.jpg",
-    metrics: ["500K+ транзакций/день", "99.99% uptime", "50% рост конверсии"],
-  },
-  {
-    title: "ERP-система для производства",
-    category: "Автоматизация",
-    description: "Комплексная система управления производством и логистикой",
-    image: "/erp-manufacturing-system.jpg",
-    metrics: ["40% снижение издержек", "3x ускорение процессов", "Интеграция с 15+ системами"],
-  },
-  {
-    title: "Мобильное приложение для ритейла",
-    category: "E-commerce",
-    description: "Кросс-платформенное приложение с AI-рекомендациями",
-    image: "/retail-mobile-app-shopping.jpg",
-    metrics: ["1M+ установок", "4.8★ рейтинг", "60% повторных покупок"],
-  },
-]
+import { useLanguage } from "@/lib/language-context"
 
 export function Showcase() {
+  const { t } = useLanguage()
+
   return (
     <section id="cases" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
@@ -41,16 +20,18 @@ export function Showcase() {
           className="mb-12 text-center sm:mb-16 lg:mb-20"
         >
           <h2 className="mb-4 text-balance text-3xl font-bold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            Наши{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">проекты</span>
+            {t.showcase.title.split(" ")[0]}{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+              {t.showcase.title.split(" ").slice(1).join(" ")}
+            </span>
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-base text-zinc-400 sm:text-lg lg:text-xl">
-            Реальные результаты для реального бизнеса
+            {t.showcase.subtitle}
           </p>
         </motion.div>
 
         <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-          {cases.map((project, index) => (
+          {t.showcase.cases.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
@@ -61,7 +42,13 @@ export function Showcase() {
             >
               <div className={`relative ${index === 0 ? "aspect-[16/9] sm:aspect-[21/9]" : "aspect-[4/3]"}`}>
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={
+                    index === 0
+                      ? "/fintech-platform-dashboard.jpg"
+                      : index === 1
+                        ? "/erp-manufacturing-system.jpg"
+                        : "/retail-mobile-app-shopping.jpg"
+                  }
                   alt={project.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -95,7 +82,7 @@ export function Showcase() {
                   </div>
 
                   <div className="flex items-center gap-2 text-sm text-purple-400 transition-all group-hover:gap-4 sm:text-base">
-                    <span className="font-semibold">Подробнее</span>
+                    <span className="font-semibold">{t.showcase.readMore}</span>
                     <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
                 </div>
