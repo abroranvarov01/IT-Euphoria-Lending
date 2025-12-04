@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { useLanguage } from "@/lib/language-context";
+import { motion } from "framer-motion";
 
 const clients = [
   { name: "TechCorp", logo: "/tech-company-logo.jpg" },
@@ -9,9 +10,19 @@ const clients = [
   { name: "HealthTech", logo: "/health-company-logo.png" },
   { name: "LogiChain", logo: "/logistics-company-logo.png" },
   { name: "EduSmart", logo: "/education-company-logo.png" },
-]
+];
 
 export function TrustedBy() {
+  const { t } = useLanguage();
+
+  const titleText = t.trustedBy.title;
+
+  const words = titleText.split(/\s+/).filter((word) => word.length > 0);
+
+  const lastWord = words.length > 0 ? words[words.length - 1] : "";
+
+  const firstPart = words.slice(0, -1).join(" ");
+
   return (
     <section className="relative py-32">
       <div className="container mx-auto px-6">
@@ -23,8 +34,12 @@ export function TrustedBy() {
           className="mb-16 text-center"
         >
           <h2 className="mb-6 text-balance text-5xl font-bold md:text-6xl">
-            Нам{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">доверяют</span>
+            {firstPart}
+            {firstPart.length > 0 && lastWord.length > 0 && " "}
+
+            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+              {lastWord}
+            </span>
           </h2>
         </motion.div>
 
@@ -50,5 +65,5 @@ export function TrustedBy() {
         </div>
       </div>
     </section>
-  )
+  );
 }

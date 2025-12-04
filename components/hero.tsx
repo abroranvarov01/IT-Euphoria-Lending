@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
-import { useLanguage } from "@/lib/language-context"
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { useLanguage } from "@/lib/language-context";
 
 interface HeroProps {
-  onOpenModal: (service?: string) => void
+  onOpenModal: (service?: string) => void;
 }
 
 export function Hero({ onOpenModal }: HeroProps) {
-  const { t } = useLanguage()
-  const ref = useRef<HTMLDivElement>(null)
+  const { t } = useLanguage();
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
   const handleStartProject = () => {
-    onOpenModal()
-  }
+    onOpenModal();
+  };
 
   const handleContactUs = () => {
-    onOpenModal()
-  }
+    onOpenModal();
+  };
 
   return (
     <section ref={ref} className="relative h-dvh overflow-hidden">
@@ -85,15 +85,34 @@ export function Hero({ onOpenModal }: HeroProps) {
             transition={{ duration: 1, delay: 0.4 }}
             className="mb-6 text-balance text-3xl font-bold leading-[1.1] tracking-tight sm:mb-8 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
           >
-            {t.hero.title.split("цифровые решения")[0]}
-            <span className="bg-gradient-to-r from-purple-400 via-purple-600 to-blue-500 bg-clip-text text-transparent">
-              {t.hero.title.includes("цифровые решения") ? "цифровые решения" : "raqamli yechimlar"}
-            </span>
-            {
-              t.hero.title.split(
-                t.hero.title.includes("цифровые решения") ? "цифровые решения" : "raqamli yechimlar",
-              )[1]
-            }
+            {(() => {
+              const uzbekWord = "raqamli yechimlar";
+              const russianWord = "цифровые решения";
+
+              const targetWord = t.hero.title.includes(russianWord)
+                ? russianWord
+                : t.hero.title.includes(uzbekWord)
+                ? uzbekWord
+                : "";
+
+              const coloredSpan = (
+                <span className="bg-gradient-to-r from-purple-400 via-purple-600 to-blue-500 bg-clip-text text-transparent">
+                  {targetWord}
+                </span>
+              );
+
+              if (targetWord) {
+                const parts = t.hero.title.split(targetWord);
+                return (
+                  <>
+                    {parts[0]}
+                    {coloredSpan}
+                    {parts[1]}
+                  </>
+                );
+              }
+              return t.hero.title;
+            })()}
           </motion.h1>
 
           <motion.p
@@ -146,5 +165,5 @@ export function Hero({ onOpenModal }: HeroProps) {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

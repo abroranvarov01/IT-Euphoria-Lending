@@ -16,7 +16,8 @@ export const translations = {
     },
     hero: {
       badge: "Технологии будущего",
-      title: "Мы создаем цифровые решения, которые вдохновляют и масштабируют бизнес",
+      title:
+        "Мы создаем цифровые решения, которые вдохновляют и масштабируют бизнес",
       description:
         "Команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и цифровизации бизнеса",
     },
@@ -63,7 +64,8 @@ export const translations = {
         },
         {
           title: "IP-телефония",
-          description: "Внедрение VoIP-решений, настройка Asterisk, 3CX, FreePBX. Интеграция телефонии с CRM и ботами.",
+          description:
+            "Внедрение VoIP-решений, настройка Asterisk, 3CX, FreePBX. Интеграция телефонии с CRM и ботами.",
         },
         {
           title: "Разработка и доработка 1С",
@@ -105,14 +107,24 @@ export const translations = {
         {
           category: "Финансовые технологии",
           title: "Платформа для финтех-стартапа",
-          description: "Разработка масштабируемой платформы для обработки платежей с высокой нагрузкой",
-          metrics: ["500K+ транзакций/день", "99.99% uptime", "50% рост конверсии"],
+          description:
+            "Разработка масштабируемой платформы для обработки платежей с высокой нагрузкой",
+          metrics: [
+            "500K+ транзакций/день",
+            "99.99% uptime",
+            "50% рост конверсии",
+          ],
         },
         {
           category: "Автоматизация",
           title: "ERP-система для производства",
-          description: "Комплексная система управления производством и логистикой",
-          metrics: ["40% снижение издержек", "3x ускорение процессов", "Интеграция с 15+ системами"],
+          description:
+            "Комплексная система управления производством и логистикой",
+          metrics: [
+            "40% снижение издержек",
+            "3x ускорение процессов",
+            "Интеграция с 15+ системами",
+          ],
         },
         {
           category: "E-commerce",
@@ -128,7 +140,8 @@ export const translations = {
       benefits: [
         {
           title: "Комплексный подход",
-          description: "От идеи до внедрения — полный цикл разработки и поддержки",
+          description:
+            "От идеи до внедрения — полный цикл разработки и поддержки",
         },
         {
           title: "Работаем с любым масштабом",
@@ -136,7 +149,8 @@ export const translations = {
         },
         {
           title: "Гибкая модель сотрудничества",
-          description: "Проектно, абонентски или по SLA — выбирайте удобный формат",
+          description:
+            "Проектно, абонентски или по SLA — выбирайте удобный формат",
         },
         {
           title: "Собственная команда",
@@ -144,13 +158,19 @@ export const translations = {
         },
         {
           title: "Гарантия качества",
-          description: "Безопасность данных и прозрачная отчётность на всех этапах",
+          description:
+            "Безопасность данных и прозрачная отчётность на всех этапах",
         },
       ],
     },
+    trustedBy: {
+      title: "Нам доверяют",
+    },
+
     contactSection: {
       title: "Начнем работать вместе",
-      subtitle: "Расскажите о вашем проекте, и мы свяжемся с вами в ближайшее время",
+      subtitle:
+        "Расскажите о вашем проекте, и мы свяжемся с вами в ближайшее время",
       form: {
         name: "Ваше имя",
         email: "Email",
@@ -175,7 +195,8 @@ export const translations = {
       },
     },
     footer: {
-      description: "Разработка, внедрение и сопровождение IT-систем полного цикла для вашего бизнеса",
+      description:
+        "Разработка, внедрение и сопровождение IT-систем полного цикла для вашего бизнеса",
       services: {
         title: "Услуги",
         links: ["Внедрение ПО", "Разработка систем", "Консалтинг", "Аудит"],
@@ -208,7 +229,8 @@ export const translations = {
     },
     hero: {
       badge: "Kelajak texnologiyalari",
-      title: "Biz biznesingizni ilhomlantiruvchi va kengaytiruvchi raqamli yechimlar yaratamiz",
+      title:
+        "Biz biznesingizni ilhomlantiruvchi va kengaytiruvchi raqamli yechimlar yaratamiz",
       description:
         "Ishlab chiqish, avtomatlashtirish va biznesni raqamlashtirish sohasida kompleks xizmatlar ko'rsatuvchi IT mutaxassislari jamoasi",
     },
@@ -298,14 +320,24 @@ export const translations = {
         {
           category: "Moliyaviy texnologiyalar",
           title: "Fintex startap uchun platforma",
-          description: "Yuqori yuklamali to'lovlarni qayta ishlash uchun kengaytiriladigan platforma ishlab chiqish",
-          metrics: ["Kuniga 500K+ tranzaksiya", "99.99% ishlash vaqti", "50% konversiya o'sishi"],
+          description:
+            "Yuqori yuklamali to'lovlarni qayta ishlash uchun kengaytiriladigan platforma ishlab chiqish",
+          metrics: [
+            "Kuniga 500K+ tranzaksiya",
+            "99.99% ishlash vaqti",
+            "50% konversiya o'sishi",
+          ],
         },
         {
           category: "Avtomatlashtirish",
           title: "Ishlab chiqarish uchun ERP tizimi",
-          description: "Ishlab chiqarish va logistikani boshqarish uchun kompleks tizim",
-          metrics: ["40% xarajatlarni kamaytirish", "3x jarayonlarni tezlashtirish", "15+ tizim bilan integratsiya"],
+          description:
+            "Ishlab chiqarish va logistikani boshqarish uchun kompleks tizim",
+          metrics: [
+            "40% xarajatlarni kamaytirish",
+            "3x jarayonlarni tezlashtirish",
+            "15+ tizim bilan integratsiya",
+          ],
         },
         {
           category: "Elektron tijorat",
@@ -316,12 +348,14 @@ export const translations = {
       ],
       readMore: "Batafsil",
     },
+
     whyUs: {
       title: "Nima uchun bizni tanlashadi",
       benefits: [
         {
           title: "Kompleks yondashuv",
-          description: "G'oyadan joriy qilishgacha — to'liq ishlab chiqish va qo'llab-quvvatlash tsikli",
+          description:
+            "G'oyadan joriy qilishgacha — to'liq ishlab chiqish va qo'llab-quvvatlash tsikli",
         },
         {
           title: "Har qanday miqyosda ishlaymiz",
@@ -329,21 +363,28 @@ export const translations = {
         },
         {
           title: "Moslashuvchan hamkorlik modeli",
-          description: "Loyihaviy, abonent yoki SLA bo'yicha — qulay formatni tanlang",
+          description:
+            "Loyihaviy, abonent yoki SLA bo'yicha — qulay formatni tanlang",
         },
         {
           title: "O'z jamoamiz",
-          description: "Kompaniya shtatidagi tajribali dasturchilar va muhandislar",
+          description:
+            "Kompaniya shtatidagi tajribali dasturchilar va muhandislar",
         },
         {
           title: "Sifat kafolati",
-          description: "Barcha bosqichlarda ma'lumotlar xavfsizligi va shaffof hisobot",
+          description:
+            "Barcha bosqichlarda ma'lumotlar xavfsizligi va shaffof hisobot",
         },
       ],
     },
+    trustedBy: {
+      title: "Bizga ishonishadi",
+    },
     contactSection: {
       title: "Keling, birga ishlaylik",
-      subtitle: "Loyihangiz haqida gapirib bering, biz tez orada siz bilan bog'lanamiz",
+      subtitle:
+        "Loyihangiz haqida gapirib bering, biz tez orada siz bilan bog'lanamiz",
       form: {
         name: "Ismingiz",
         email: "Email",
@@ -368,10 +409,16 @@ export const translations = {
       },
     },
     footer: {
-      description: "Biznesingiz uchun to'liq tsiklli IT-tizimlarni ishlab chiqish, joriy qilish va qo'llab-quvvatlash",
+      description:
+        "Biznesingiz uchun to'liq tsiklli IT-tizimlarni ishlab chiqish, joriy qilish va qo'llab-quvvatlash",
       services: {
         title: "Xizmatlar",
-        links: ["Dasturiy ta'minotni joriy qilish", "Tizimlarni ishlab chiqish", "Konsalting", "Audit"],
+        links: [
+          "Dasturiy ta'minotni joriy qilish",
+          "Tizimlarni ishlab chiqish",
+          "Konsalting",
+          "Audit",
+        ],
       },
       company: {
         title: "Kompaniya",
@@ -384,7 +431,7 @@ export const translations = {
       copyright: "IT Outsource. Barcha huquqlar himoyalangan.",
     },
   },
-}
+};
 
-export type Language = "ru" | "uz"
-export type TranslationKey = typeof translations.ru
+export type Language = "ru" | "uz";
+export type TranslationKey = typeof translations.ru;

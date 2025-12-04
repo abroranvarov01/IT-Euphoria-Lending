@@ -1,29 +1,33 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { LanguageProvider } from "@/lib/language-context"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { LanguageProvider } from "@/lib/language-context";
+import { LanguageTransitionOverlay } from "@/components/LanguageTransitionOverlay";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "IT Outsourcing | Цифровые решения для бизнеса",
   description: "Разработка, внедрение и сопровождение IT-систем полного цикла",
   generator: "v0.app",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ru" className="dark">
       <body className={`${inter.className} font-sans antialiased`}>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <LanguageTransitionOverlay />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
