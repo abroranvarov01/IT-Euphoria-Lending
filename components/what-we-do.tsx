@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import { useLanguage } from "@/lib/language-context"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 const serviceImages = [
   "/software-implementation-modern-office.jpg",
@@ -15,14 +15,14 @@ const serviceImages = [
   "/database-servers-data-center.jpg",
   "/business-automation-workflow.png",
   "/it-consulting-meeting.png",
-]
+];
 
 interface WhatWeDoProps {
-  onOpenModal: (service: string) => void
+  onOpenModal: (service: string) => void;
 }
 
 export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section id="services" className="relative py-16 sm:py-24 lg:py-32">
@@ -35,10 +35,25 @@ export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
           className="mb-12 text-center sm:mb-16 lg:mb-20"
         >
           <h2 className="mb-4 text-balance text-3xl font-bold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            {t.whatWeDo.title.split("делаем")[0] || t.whatWeDo.title.split("qilamiz")[0]}{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-              {t.whatWeDo.title.includes("делаем") ? "делаем" : "qilamiz"}
-            </span>
+            {(() => {
+              const russian = "делаем";
+              const uzbek = "qilamiz";
+
+              const separator = t.whatWeDo.title.includes(russian)
+                ? russian
+                : uzbek;
+
+              const parts = t.whatWeDo.title.split(separator);
+
+              return (
+                <>
+                  {parts[0]}
+                  <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+                    {separator}
+                  </span>
+                </>
+              );
+            })()}
           </h2>
         </motion.div>
 
@@ -97,5 +112,5 @@ export function WhatWeDo({ onOpenModal }: WhatWeDoProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }
