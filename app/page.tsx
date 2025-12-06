@@ -1,30 +1,34 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { VideoSection } from "@/components/video-section"
-import { Approach } from "@/components/approach"
-import { WhatWeDo } from "@/components/what-we-do"
-import { Showcase } from "@/components/showcase"
-import { TrustedBy } from "@/components/trusted-by"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
-import { ContactModal } from "@/components/contact-modal"
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { VideoSection } from "@/components/video-section";
+import { Approach } from "@/components/approach";
+import { WhatWeDo } from "@/components/what-we-do";
+import { Showcase } from "@/components/showcase";
+import { TrustedBy } from "@/components/trusted-by";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
+import { ContactModal } from "@/components/contact-modal";
+import { About } from "@/components/about";
+import { Cases } from "@/components/cases";
+import { Features } from "@/components/features";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedService, setSelectedService] = useState<string | undefined>()
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<string | undefined>();
 
   const openModal = (service?: string) => {
-    setSelectedService(service)
-    setIsModalOpen(true)
-  }
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedService(undefined)
-  }
+    setIsModalOpen(false);
+    setSelectedService(undefined);
+  };
 
   return (
     <div className="min-h-screen bg-black">
@@ -35,11 +39,18 @@ export default function Home() {
         <Approach />
         <WhatWeDo onOpenModal={openModal} />
         <Showcase />
+        {/* <About /> */}
+        <Features />
+        <Testimonials />
         <TrustedBy />
         <ContactSection />
       </main>
       <Footer />
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        service={selectedService}
+      />
     </div>
-  )
+  );
 }
