@@ -1,12 +1,27 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { useLanguage } from "@/lib/language-context";
 
 export function About() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const { t } = useLanguage();
+
+  const titleText = t.about.title;
+
+  const russianSeparator = "компании";
+  const uzbekSeparator = "Kompaniya";
+  const isRussian = titleText
+    .toLowerCase()
+    .includes(russianSeparator.toLowerCase());
+
+  const separator = isRussian ? russianSeparator : uzbekSeparator;
+
+  const parts = titleText.split(separator);
 
   return (
     <section ref={ref} className="relative py-24 md:py-32">
@@ -19,14 +34,20 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <h2 className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">О компании</h2>
+          <h2 className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+            {parts[0]}
+
+            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+              {separator}
+            </span>
+
+            {parts[1]}
+          </h2>
           <p className="text-balance text-xl leading-relaxed text-zinc-400 md:text-2xl">
-            Мы — команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и
-            цифровизации бизнеса. Наш подход основан на глубокой экспертизе, современных технологиях и чётком понимании
-            бизнес-целей клиента.
+            {t.about.description}
           </p>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
