@@ -16,7 +16,8 @@ export const translations = {
     },
     hero: {
       badge: "Технологии будущего",
-      title: "Мы создаем цифровые решения, которые вдохновляют и масштабируют бизнес",
+      title:
+        "Мы создаем цифровые решения, которые вдохновляют и масштабируют бизнес",
       description:
         "Команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и цифровизации бизнеса",
     },
@@ -63,7 +64,8 @@ export const translations = {
         },
         {
           title: "IP-телефония",
-          description: "Внедрение VoIP-решений, настройка Asterisk, 3CX, FreePBX. Интеграция телефонии с CRM и ботами.",
+          description:
+            "Внедрение VoIP-решений, настройка Asterisk, 3CX, FreePBX. Интеграция телефонии с CRM и ботами.",
         },
         {
           title: "Разработка и доработка 1С",
@@ -105,14 +107,24 @@ export const translations = {
         {
           category: "Финансовые технологии",
           title: "Платформа для финтех-стартапа",
-          description: "Разработка масштабируемой платформы для обработки платежей с высокой нагрузкой",
-          metrics: ["500K+ транзакций/день", "99.99% uptime", "50% рост конверсии"],
+          description:
+            "Разработка масштабируемой платформы для обработки платежей с высокой нагрузкой",
+          metrics: [
+            "500K+ транзакций/день",
+            "99.99% uptime",
+            "50% рост конверсии",
+          ],
         },
         {
           category: "Автоматизация",
           title: "ERP-система для производства",
-          description: "Комплексная система управления производством и логистикой",
-          metrics: ["40% снижение издержек", "3x ускорение процессов", "Интеграция с 15+ системами"],
+          description:
+            "Комплексная система управления производством и логистикой",
+          metrics: [
+            "40% снижение издержек",
+            "3x ускорение процессов",
+            "Интеграция с 15+ системами",
+          ],
         },
         {
           category: "E-commerce",
@@ -128,7 +140,8 @@ export const translations = {
       benefits: [
         {
           title: "Комплексный подход",
-          description: "От идеи до внедрения — полный цикл разработки и поддержки",
+          description:
+            "От идеи до внедрения — полный цикл разработки и поддержки",
         },
         {
           title: "Работаем с любым масштабом",
@@ -136,7 +149,8 @@ export const translations = {
         },
         {
           title: "Гибкая модель сотрудничества",
-          description: "Проектно, абонентски или по SLA — выбирайте удобный формат",
+          description:
+            "Проектно, абонентски или по SLA — выбирайте удобный формат",
         },
         {
           title: "Собственная команда",
@@ -144,13 +158,123 @@ export const translations = {
         },
         {
           title: "Гарантия качества",
-          description: "Безопасность данных и прозрачная отчётность на всех этапах",
+          description:
+            "Безопасность данных и прозрачная отчётность на всех этапах",
         },
       ],
     },
+    trustedBy: {
+      title: "Нам доверяют",
+    },
+    about: {
+      title: "О компании",
+      description:
+        "Мы — команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и цифровизации бизнеса. Наш подход основан на глубокой экспертизе, современных технологиях и чётком понимании бизнес-целей клиента.",
+    },
+    cases: {
+      title: "Кейсы",
+      subtitle: "Успешные проекты наших клиентов",
+      items: [
+        {
+          iconType: "FlaskConical",
+          client: "Сеть медицинских лабораторий",
+          title: "Система автоматизации документооборота",
+          description:
+            "Разработали комплексную систему управления документами и результатами анализов",
+          result: "Снижение ручных процессов на 40%",
+          tags: ["Автоматизация", "Документооборот", "Интеграция"],
+        },
+        {
+          iconType: "Building2",
+          client: "Производственное предприятие",
+          title: "ERP-система управления производством",
+          description:
+            "Внедрили систему планирования ресурсов и контроля производственных процессов",
+          result: "Увеличение эффективности на 35%",
+          tags: ["ERP", "Производство", "Аналитика"],
+        },
+        {
+          iconType: "ShoppingCart",
+          client: "Ритейл компания",
+          title: "Платформа электронной коммерции",
+          description:
+            "Создали масштабируемую платформу для онлайн-продаж с интеграцией складской системы",
+          result: "Рост продаж на 60%",
+          tags: ["E-commerce", "Интеграция", "Масштабирование"],
+        },
+      ],
+    },
+    features: {
+      mainTitle: "Всё, что вам нужно для автоматизации",
+      subtitle:
+        "Мощные функции, разработанные, чтобы помочь командам работать умнее, а не усерднее. Создавайте, развертывайте и масштабируйте свои рабочие процессы с уверенностью.",
+      items: [
+        {
+          iconType: "Workflow",
+          title: "Визуальный конструктор процессов",
+          description:
+            "Создавайте сложные рабочие процессы автоматизации с помощью нашего интуитивно понятного интерфейса drag-and-drop. Кодирование не требуется.",
+        },
+        {
+          iconType: "Zap",
+          title: "Молниеносное выполнение",
+          description:
+            "Выполняйте рабочие процессы за миллисекунды благодаря нашей оптимизированной инфраструктуре. Масштабируйтесь до миллионов операций.",
+        },
+        {
+          iconType: "Shield",
+          title: "Корпоративная безопасность",
+          description:
+            "Шифрование на уровне банка, соответствие SOC 2 и расширенный контроль доступа защищают ваши данные.",
+        },
+        {
+          iconType: "BarChart3",
+          title: "Аналитика в реальном времени",
+          description:
+            "Отслеживайте производительность рабочих процессов с помощью подробной аналитики и отчетов. Оптимизируйте по мере роста.",
+        },
+      ],
+    },
+    testimonials: {
+      title: "Пользуется любовью команд по всему миру",
+      subtitle:
+        "Присоединяйтесь к тысячам компаний, которые доверяют StreamLine управление своими рабочими процессами.",
+      atText: "в", // "...должность В компания"
+      items: [
+        {
+          quote:
+            "StreamLine трансформировал работу нашей команды. Мы автоматизировали 80% наших рутинных задач и сэкономили бесчисленное количество часов каждую неделю.",
+          author: "Сара Чен",
+          role: "Вице-президент по операциям",
+          company: "TechCorp",
+          avatar: "/professional-woman-diverse.png",
+          initials: "СЧ",
+        },
+        {
+          quote:
+            "Визуальный конструктор рабочих процессов невероятно интуитивен. Мы перешли от идеи к продакшену менее чем за час. Это абсолютно меняет правила игры.",
+          author: "Майкл Родригес",
+          role: "Руководитель отдела инженерии",
+          company: "DataFlow Inc",
+          avatar: "/professional-man.jpg",
+          initials: "МР",
+        },
+        {
+          quote:
+            "Лучшая платформа для автоматизации, которую мы использовали. Аналитика даёт нам информацию, которой у нас никогда не было, а команда поддержки просто феноменальна.",
+          author: "Эмили Уотсон",
+          role: "Менеджер по продукту",
+          company: "CloudScale",
+          avatar: "/professional-woman-glasses.png",
+          initials: "ЭУ",
+        },
+      ],
+    },
+
     contactSection: {
       title: "Начнем работать вместе",
-      subtitle: "Расскажите о вашем проекте, и мы свяжемся с вами в ближайшее время",
+      subtitle:
+        "Расскажите о вашем проекте, и мы свяжемся с вами в ближайшее время",
       form: {
         name: "Ваше имя",
         email: "Email",
@@ -175,7 +299,8 @@ export const translations = {
       },
     },
     footer: {
-      description: "Разработка, внедрение и сопровождение IT-систем полного цикла для вашего бизнеса",
+      description:
+        "Разработка, внедрение и сопровождение IT-систем полного цикла для вашего бизнеса",
       services: {
         title: "Услуги",
         links: ["Внедрение ПО", "Разработка систем", "Консалтинг", "Аудит"],
@@ -208,7 +333,8 @@ export const translations = {
     },
     hero: {
       badge: "Kelajak texnologiyalari",
-      title: "Biz biznesingizni ilhomlantiruvchi va kengaytiruvchi raqamli yechimlar yaratamiz",
+      title:
+        "Biz biznesingizni ilhomlantiruvchi va kengaytiruvchi raqamli yechimlar yaratamiz",
       description:
         "Ishlab chiqish, avtomatlashtirish va biznesni raqamlashtirish sohasida kompleks xizmatlar ko'rsatuvchi IT mutaxassislari jamoasi",
     },
@@ -298,14 +424,24 @@ export const translations = {
         {
           category: "Moliyaviy texnologiyalar",
           title: "Fintex startap uchun platforma",
-          description: "Yuqori yuklamali to'lovlarni qayta ishlash uchun kengaytiriladigan platforma ishlab chiqish",
-          metrics: ["Kuniga 500K+ tranzaksiya", "99.99% ishlash vaqti", "50% konversiya o'sishi"],
+          description:
+            "Yuqori yuklamali to'lovlarni qayta ishlash uchun kengaytiriladigan platforma ishlab chiqish",
+          metrics: [
+            "Kuniga 500K+ tranzaksiya",
+            "99.99% ishlash vaqti",
+            "50% konversiya o'sishi",
+          ],
         },
         {
           category: "Avtomatlashtirish",
           title: "Ishlab chiqarish uchun ERP tizimi",
-          description: "Ishlab chiqarish va logistikani boshqarish uchun kompleks tizim",
-          metrics: ["40% xarajatlarni kamaytirish", "3x jarayonlarni tezlashtirish", "15+ tizim bilan integratsiya"],
+          description:
+            "Ishlab chiqarish va logistikani boshqarish uchun kompleks tizim",
+          metrics: [
+            "40% xarajatlarni kamaytirish",
+            "3x jarayonlarni tezlashtirish",
+            "15+ tizim bilan integratsiya",
+          ],
         },
         {
           category: "Elektron tijorat",
@@ -316,12 +452,14 @@ export const translations = {
       ],
       readMore: "Batafsil",
     },
+
     whyUs: {
       title: "Nima uchun bizni tanlashadi",
       benefits: [
         {
           title: "Kompleks yondashuv",
-          description: "G'oyadan joriy qilishgacha — to'liq ishlab chiqish va qo'llab-quvvatlash tsikli",
+          description:
+            "G'oyadan joriy qilishgacha — to'liq ishlab chiqish va qo'llab-quvvatlash tsikli",
         },
         {
           title: "Har qanday miqyosda ishlaymiz",
@@ -329,21 +467,135 @@ export const translations = {
         },
         {
           title: "Moslashuvchan hamkorlik modeli",
-          description: "Loyihaviy, abonent yoki SLA bo'yicha — qulay formatni tanlang",
+          description:
+            "Loyihaviy, abonent yoki SLA bo'yicha — qulay formatni tanlang",
         },
         {
           title: "O'z jamoamiz",
-          description: "Kompaniya shtatidagi tajribali dasturchilar va muhandislar",
+          description:
+            "Kompaniya shtatidagi tajribali dasturchilar va muhandislar",
         },
         {
           title: "Sifat kafolati",
-          description: "Barcha bosqichlarda ma'lumotlar xavfsizligi va shaffof hisobot",
+          description:
+            "Barcha bosqichlarda ma'lumotlar xavfsizligi va shaffof hisobot",
         },
       ],
     },
+    trustedBy: {
+      title: "Bizga ishonishadi",
+    },
+    about: {
+      title: "Kompaniya haqida",
+      description:
+        "Biz — biznesni rivojlantirish, avtomatlashtirish va raqamlashtirish sohasida kompleks xizmatlar ko'rsatuvchi IT-mutaxassislar jamoasimiz. Bizning yondashuvimiz chuqur ekspertiza, zamonaviy texnologiyalar va mijozning biznes maqsadlarini aniq tushunishga asoslangan.",
+    },
+    cases: {
+      title: "Bizning loyihalar",
+      subtitle: "Mijozlarimizning muvaffaqiyatli loyihalari",
+      items: [
+        {
+          iconType: "FlaskConical",
+          client: "Tibbiy laboratoriyalar tarmog‘i",
+          title: "Hujjatlar aylanmasini avtomatlashtirish tizimi",
+          description:
+            "Hujjatlar va tahlil natijalarini boshqarishning kompleks tizimi ishlab chiqildi",
+          result: "Qo‘l mehnatini 40% ga kamaytirish",
+          tags: ["Avtomatlashtirish", "Hujjat aylanmasi", "Integratsiya"],
+        },
+        // ... qolgan keyslar
+        {
+          iconType: "Building2",
+          client: "Ishlab chiqarish korxonasi",
+          title: "Ishlab chiqarishni boshqarish uchun ERP tizimi",
+          description:
+            "Resurslarni rejalashtirish va ishlab chiqarish jarayonlarini nazorat qilish tizimi joriy etildi",
+          result: "Samaradorlikni 35% ga oshirish",
+          tags: ["ERP", "Ishlab chiqarish", "Analitika"],
+        },
+        {
+          iconType: "ShoppingCart",
+          client: "Chakana savdo kompaniyasi",
+          title: "Elektron tijorat platformasi",
+          description:
+            "Ombor tizimi bilan integratsiyalashgan, kengaytiriladigan onlayn savdo platformasi yaratildi",
+          result: "Savdo o‘sishi 60%",
+          tags: ["E-commerce", "Integratsiya", "Masshtablash"],
+        },
+      ],
+    },
+    features: {
+      mainTitle:
+        "Sizga avtomatlashtirish uchun kerak bo‘ladigan barcha narsalar",
+      subtitle:
+        "Jamoalarga qattiq emas, aqlli ishlashga yordam berish uchun mo‘ljallangan kuchli funksiyalar. Ish jarayonlaringizni ishonch bilan yarating, joriy eting va masshtablang.",
+      items: [
+        {
+          iconType: "Workflow",
+          title: "Vizual jarayonlar konstruktori",
+          description:
+            "Intuitiv drag-and-drop interfeysimiz yordamida murakkab avtomatlashtirish jarayonlarini yarating. Kod yozish talab qilinmaydi.",
+        },
+        {
+          iconType: "Zap",
+          title: "Chaqmoq tezligida bajarish",
+          description:
+            "Optimallashtirilgan infratuzilmamiz tufayli ish jarayonlarini millisoniyalarda bajaring. Millionlab operatsiyalarga qadar masshtablang.",
+        },
+        {
+          iconType: "Shield",
+          title: "Korporativ xavfsizlik",
+          description:
+            "Bank darajasidagi shifrlash, SOC 2 muvofiqligi va kengaytirilgan kirish nazorati ma'lumotlaringizni xavfsiz saqlaydi.",
+        },
+        {
+          iconType: "BarChart3",
+          title: "Haqiqiy vaqt rejimida analitika",
+          description:
+            "Batafsil analitika va tahlillar bilan ish jarayoni samaradorligini kuzatib boring. O'sish jarayonida optimallashtiring.",
+        },
+      ],
+    },
+    testimonials: {
+      title: "Butun dunyo jamoalari tomonidan sevilgan",
+      subtitle:
+        "Ish jarayonlarini boshqarishda StreamLine'ga ishonadigan minglab kompaniyalarga qo'shiling.",
+      atText: "kompaniyasida", // "...rol KOMPANIYASIDA"
+      items: [
+        {
+          quote:
+            "StreamLine jamoamiz ishini o'zgartirdi. Biz muntazam vazifalarimizning 80 foizini avtomatlashtirdik va har hafta behisob soatlarni tejadik.",
+          author: "Sara Chen",
+          role: "Operatsiyalar bo‘yicha vitse-prezident",
+          company: "TechCorp",
+          avatar: "/professional-woman-diverse.png",
+          initials: "SC",
+        },
+        {
+          quote:
+            "Vizual ish jarayoni konstruktori nihoyatda intuitivdir. Biz bir soatdan kam vaqt ichida g‘oyadan ishlab chiqarishga o'tdik. Bu mutlaqo o‘yin qoidalarini o‘zgartiradi.",
+          author: "Maykl Rodriges",
+          role: "Muhandislik bo‘limi rahbari",
+          company: "DataFlow Inc",
+          avatar: "/professional-man.jpg",
+          initials: "MR",
+        },
+        {
+          quote:
+            "Biz foydalangan eng yaxshi avtomatlashtirish platformasi. Analitika bizga ilgari hech qachon bo'lmagan tushunchalarni beradi, va qo'llab-quvvatlash jamoasi ajoyib.",
+          author: "Emili Uotson",
+          role: "Mahsulot menejeri",
+          company: "CloudScale",
+          avatar: "/professional-woman-glasses.png",
+          initials: "EU",
+        },
+      ],
+    },
+
     contactSection: {
       title: "Keling, birga ishlaylik",
-      subtitle: "Loyihangiz haqida gapirib bering, biz tez orada siz bilan bog'lanamiz",
+      subtitle:
+        "Loyihangiz haqida gapirib bering, biz tez orada siz bilan bog'lanamiz",
       form: {
         name: "Ismingiz",
         email: "Email",
@@ -368,10 +620,16 @@ export const translations = {
       },
     },
     footer: {
-      description: "Biznesingiz uchun to'liq tsiklli IT-tizimlarni ishlab chiqish, joriy qilish va qo'llab-quvvatlash",
+      description:
+        "Biznesingiz uchun to'liq tsiklli IT-tizimlarni ishlab chiqish, joriy qilish va qo'llab-quvvatlash",
       services: {
         title: "Xizmatlar",
-        links: ["Dasturiy ta'minotni joriy qilish", "Tizimlarni ishlab chiqish", "Konsalting", "Audit"],
+        links: [
+          "Dasturiy ta'minotni joriy qilish",
+          "Tizimlarni ishlab chiqish",
+          "Konsalting",
+          "Audit",
+        ],
       },
       company: {
         title: "Kompaniya",
@@ -384,7 +642,7 @@ export const translations = {
       copyright: "IT Outsource. Barcha huquqlar himoyalangan.",
     },
   },
-}
+};
 
-export type Language = "ru" | "uz"
-export type TranslationKey = typeof translations.ru
+export type Language = "ru" | "uz";
+export type TranslationKey = typeof translations.ru;
