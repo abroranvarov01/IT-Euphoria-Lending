@@ -166,6 +166,110 @@ export const translations = {
     trustedBy: {
       title: "Нам доверяют",
     },
+    about: {
+      title: "О компании",
+      description:
+        "Мы — команда IT-специалистов, предоставляющих комплексные услуги в сфере разработки, автоматизации и цифровизации бизнеса. Наш подход основан на глубокой экспертизе, современных технологиях и чётком понимании бизнес-целей клиента.",
+    },
+    cases: {
+      title: "Кейсы",
+      subtitle: "Успешные проекты наших клиентов",
+      items: [
+        {
+          iconType: "FlaskConical",
+          client: "Сеть медицинских лабораторий",
+          title: "Система автоматизации документооборота",
+          description:
+            "Разработали комплексную систему управления документами и результатами анализов",
+          result: "Снижение ручных процессов на 40%",
+          tags: ["Автоматизация", "Документооборот", "Интеграция"],
+        },
+        {
+          iconType: "Building2",
+          client: "Производственное предприятие",
+          title: "ERP-система управления производством",
+          description:
+            "Внедрили систему планирования ресурсов и контроля производственных процессов",
+          result: "Увеличение эффективности на 35%",
+          tags: ["ERP", "Производство", "Аналитика"],
+        },
+        {
+          iconType: "ShoppingCart",
+          client: "Ритейл компания",
+          title: "Платформа электронной коммерции",
+          description:
+            "Создали масштабируемую платформу для онлайн-продаж с интеграцией складской системы",
+          result: "Рост продаж на 60%",
+          tags: ["E-commerce", "Интеграция", "Масштабирование"],
+        },
+      ],
+    },
+    features: {
+      mainTitle: "Всё, что вам нужно для автоматизации",
+      subtitle:
+        "Мощные функции, разработанные, чтобы помочь командам работать умнее, а не усерднее. Создавайте, развертывайте и масштабируйте свои рабочие процессы с уверенностью.",
+      items: [
+        {
+          iconType: "Workflow",
+          title: "Визуальный конструктор процессов",
+          description:
+            "Создавайте сложные рабочие процессы автоматизации с помощью нашего интуитивно понятного интерфейса drag-and-drop. Кодирование не требуется.",
+        },
+        {
+          iconType: "Zap",
+          title: "Молниеносное выполнение",
+          description:
+            "Выполняйте рабочие процессы за миллисекунды благодаря нашей оптимизированной инфраструктуре. Масштабируйтесь до миллионов операций.",
+        },
+        {
+          iconType: "Shield",
+          title: "Корпоративная безопасность",
+          description:
+            "Шифрование на уровне банка, соответствие SOC 2 и расширенный контроль доступа защищают ваши данные.",
+        },
+        {
+          iconType: "BarChart3",
+          title: "Аналитика в реальном времени",
+          description:
+            "Отслеживайте производительность рабочих процессов с помощью подробной аналитики и отчетов. Оптимизируйте по мере роста.",
+        },
+      ],
+    },
+    testimonials: {
+      title: "Пользуется любовью команд по всему миру",
+      subtitle:
+        "Присоединяйтесь к тысячам компаний, которые доверяют StreamLine управление своими рабочими процессами.",
+      atText: "в", // "...должность В компания"
+      items: [
+        {
+          quote:
+            "StreamLine трансформировал работу нашей команды. Мы автоматизировали 80% наших рутинных задач и сэкономили бесчисленное количество часов каждую неделю.",
+          author: "Сара Чен",
+          role: "Вице-президент по операциям",
+          company: "TechCorp",
+          avatar: "/professional-woman-diverse.png",
+          initials: "СЧ",
+        },
+        {
+          quote:
+            "Визуальный конструктор рабочих процессов невероятно интуитивен. Мы перешли от идеи к продакшену менее чем за час. Это абсолютно меняет правила игры.",
+          author: "Майкл Родригес",
+          role: "Руководитель отдела инженерии",
+          company: "DataFlow Inc",
+          avatar: "/professional-man.jpg",
+          initials: "МР",
+        },
+        {
+          quote:
+            "Лучшая платформа для автоматизации, которую мы использовали. Аналитика даёт нам информацию, которой у нас никогда не было, а команда поддержки просто феноменальна.",
+          author: "Эмили Уотсон",
+          role: "Менеджер по продукту",
+          company: "CloudScale",
+          avatar: "/professional-woman-glasses.png",
+          initials: "ЭУ",
+        },
+      ],
+    },
 
     contactSection: {
       title: "Начнем работать вместе",
@@ -381,6 +485,113 @@ export const translations = {
     trustedBy: {
       title: "Bizga ishonishadi",
     },
+    about: {
+      title: "Kompaniya haqida",
+      description:
+        "Biz — biznesni rivojlantirish, avtomatlashtirish va raqamlashtirish sohasida kompleks xizmatlar ko'rsatuvchi IT-mutaxassislar jamoasimiz. Bizning yondashuvimiz chuqur ekspertiza, zamonaviy texnologiyalar va mijozning biznes maqsadlarini aniq tushunishga asoslangan.",
+    },
+    cases: {
+      title: "Bizning loyihalar",
+      subtitle: "Mijozlarimizning muvaffaqiyatli loyihalari",
+      items: [
+        {
+          iconType: "FlaskConical",
+          client: "Tibbiy laboratoriyalar tarmog‘i",
+          title: "Hujjatlar aylanmasini avtomatlashtirish tizimi",
+          description:
+            "Hujjatlar va tahlil natijalarini boshqarishning kompleks tizimi ishlab chiqildi",
+          result: "Qo‘l mehnatini 40% ga kamaytirish",
+          tags: ["Avtomatlashtirish", "Hujjat aylanmasi", "Integratsiya"],
+        },
+        // ... qolgan keyslar
+        {
+          iconType: "Building2",
+          client: "Ishlab chiqarish korxonasi",
+          title: "Ishlab chiqarishni boshqarish uchun ERP tizimi",
+          description:
+            "Resurslarni rejalashtirish va ishlab chiqarish jarayonlarini nazorat qilish tizimi joriy etildi",
+          result: "Samaradorlikni 35% ga oshirish",
+          tags: ["ERP", "Ishlab chiqarish", "Analitika"],
+        },
+        {
+          iconType: "ShoppingCart",
+          client: "Chakana savdo kompaniyasi",
+          title: "Elektron tijorat platformasi",
+          description:
+            "Ombor tizimi bilan integratsiyalashgan, kengaytiriladigan onlayn savdo platformasi yaratildi",
+          result: "Savdo o‘sishi 60%",
+          tags: ["E-commerce", "Integratsiya", "Masshtablash"],
+        },
+      ],
+    },
+    features: {
+      mainTitle:
+        "Sizga avtomatlashtirish uchun kerak bo‘ladigan barcha narsalar",
+      subtitle:
+        "Jamoalarga qattiq emas, aqlli ishlashga yordam berish uchun mo‘ljallangan kuchli funksiyalar. Ish jarayonlaringizni ishonch bilan yarating, joriy eting va masshtablang.",
+      items: [
+        {
+          iconType: "Workflow",
+          title: "Vizual jarayonlar konstruktori",
+          description:
+            "Intuitiv drag-and-drop interfeysimiz yordamida murakkab avtomatlashtirish jarayonlarini yarating. Kod yozish talab qilinmaydi.",
+        },
+        {
+          iconType: "Zap",
+          title: "Chaqmoq tezligida bajarish",
+          description:
+            "Optimallashtirilgan infratuzilmamiz tufayli ish jarayonlarini millisoniyalarda bajaring. Millionlab operatsiyalarga qadar masshtablang.",
+        },
+        {
+          iconType: "Shield",
+          title: "Korporativ xavfsizlik",
+          description:
+            "Bank darajasidagi shifrlash, SOC 2 muvofiqligi va kengaytirilgan kirish nazorati ma'lumotlaringizni xavfsiz saqlaydi.",
+        },
+        {
+          iconType: "BarChart3",
+          title: "Haqiqiy vaqt rejimida analitika",
+          description:
+            "Batafsil analitika va tahlillar bilan ish jarayoni samaradorligini kuzatib boring. O'sish jarayonida optimallashtiring.",
+        },
+      ],
+    },
+    testimonials: {
+      title: "Butun dunyo jamoalari tomonidan sevilgan",
+      subtitle:
+        "Ish jarayonlarini boshqarishda StreamLine'ga ishonadigan minglab kompaniyalarga qo'shiling.",
+      atText: "kompaniyasida", // "...rol KOMPANIYASIDA"
+      items: [
+        {
+          quote:
+            "StreamLine jamoamiz ishini o'zgartirdi. Biz muntazam vazifalarimizning 80 foizini avtomatlashtirdik va har hafta behisob soatlarni tejadik.",
+          author: "Sara Chen",
+          role: "Operatsiyalar bo‘yicha vitse-prezident",
+          company: "TechCorp",
+          avatar: "/professional-woman-diverse.png",
+          initials: "SC",
+        },
+        {
+          quote:
+            "Vizual ish jarayoni konstruktori nihoyatda intuitivdir. Biz bir soatdan kam vaqt ichida g‘oyadan ishlab chiqarishga o'tdik. Bu mutlaqo o‘yin qoidalarini o‘zgartiradi.",
+          author: "Maykl Rodriges",
+          role: "Muhandislik bo‘limi rahbari",
+          company: "DataFlow Inc",
+          avatar: "/professional-man.jpg",
+          initials: "MR",
+        },
+        {
+          quote:
+            "Biz foydalangan eng yaxshi avtomatlashtirish platformasi. Analitika bizga ilgari hech qachon bo'lmagan tushunchalarni beradi, va qo'llab-quvvatlash jamoasi ajoyib.",
+          author: "Emili Uotson",
+          role: "Mahsulot menejeri",
+          company: "CloudScale",
+          avatar: "/professional-woman-glasses.png",
+          initials: "EU",
+        },
+      ],
+    },
+
     contactSection: {
       title: "Keling, birga ishlaylik",
       subtitle:
